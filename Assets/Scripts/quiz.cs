@@ -20,7 +20,8 @@ public class quiz : MonoBehaviour
 
     void GetNextQuestion()
     {
-
+        SetButtonState(true);
+        DisplayQuestion();
     }
 
     public void onAnsSelected(int idx)

@@ -21,7 +21,15 @@ public class quiz : MonoBehaviour
     void GetNextQuestion()
     {
         SetButtonState(true);
+        SetDefaultButtonSprites();
         DisplayQuestion();
+    }
+
+    private void SetDefaultButtonSprites()
+    {
+        Image buttonImage;
+        buttonImage = buttons[question.GetCorrind()].GetComponent<Image>();
+        buttonImage.sprite = defaultAnsSprite;
     }
 
     public void onAnsSelected(int idx)

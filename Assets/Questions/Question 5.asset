@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question 5
   m_EditorClassIdentifier: 
   question: What is a Variable?
+  answers:
+  - a
+  - sf
+  - sa
+  - s
+  corridx: 0

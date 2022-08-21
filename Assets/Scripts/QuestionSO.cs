@@ -15,7 +15,7 @@ public class QuestionSO : ScriptableObject
         return question;
     }
 
-    public int GetCorrind()
+    public int GetCorrectAnswerIndex()
     {
         return corridx;
     }

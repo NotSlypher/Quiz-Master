@@ -2,51 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class timer : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    [SerializeField] private float TimeToCompleteQuestion = 30f;
-    [SerializeField] private float TimeToShowCorrectAnswer = 10f;
-    private float timerValue;
-    public bool isAnsweringQuestion = false;
-    public bool loadNextQues;
-    public float fillFraction;
+    [SerializeField] float timeToCompleteQuestion = 30f;
+    [SerializeField] float timeToShowCorrectAnswer = 10f;
 
-    public void CancelTimer()
-    {
-        timerValue = 0;
-    }
+    public bool loadNextQuestion;
+    public float fillFraction;
+    public bool isAnsweringQuestion;
+
+    float timerValue;
 
     void Update()
     {
         UpdateTimer();
     }
 
-    private void UpdateTimer()
+    public void CancelTimer()
+    {
+        timerValue = 0;
+    }
+
+    void UpdateTimer()
     {
         timerValue -= Time.deltaTime;
-         
+
         if (isAnsweringQuestion)
         {
-            if (timerValue <= 0)
+            if (timerValue > 0)
             {
-                isAnsweringQuestion = false;
-                timerValue = TimeToShowCorrectAnswer;
+                fillFraction = timerValue / timeToCompleteQuestion;
             }
             else
-                fillFraction = timerValue / TimeToCompleteQuestion;
+            {
+                isAnsweringQuestion = false;
+                timerValue = timeToShowCorrectAnswer;
+            }
         }
         else
         {
-            if (timerValue <= 0)
+            if (timerValue > 0)
             {
-                isAnsweringQuestion = true;
-                timerValue = TimeToCompleteQuestion;
-                loadNextQues = true;
+                fillFraction = timerValue / timeToShowCorrectAnswer;
             }
             else
-                fillFraction = timerValue / TimeToShowCorrectAnswer;
+            {
+                isAnsweringQuestion = true;
+                timerValue = timeToCompleteQuestion;
+                loadNextQuestion = true;
+            }
         }
-
-        Debug.Log(isAnsweringQuestion + ": " + timerValue + " = " + fillFraction);
     }
 }

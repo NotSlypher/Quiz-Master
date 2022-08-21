@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c028b36295d8dad4384936409e8b4a00, type: 3}
   m_Name: Question 4
   m_EditorClassIdentifier: 
-  question: awd
+  question: Time has the unique characteristic of being the one resource _________
+    in amount for all.
   answers:
-  - w
-  - a
-  - s
-  - w
+  - Constant
+  - Infinite
+  - Relative
+  - None of the above
   corridx: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c028b36295d8dad4384936409e8b4a00, type: 3}
   m_Name: Question 1
   m_EditorClassIdentifier: 
-  question: 'Which are the common aspects by which communities are identified '
+  question: Which of these is not a kind of decisions families make?
   answers:
-  - 'Communication '
-  - cultural heritage and beliefs or shared interests
-  - Field Work
-  - Relationship
-  corridx: 0
+  - Routine
+  - Sub conscious
+  - Conscious
+  - Emergency
+  corridx: 1
